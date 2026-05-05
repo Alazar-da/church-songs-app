@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+ * {
+  @apply border-gray-200;
+}
+  
+  body {
+    @apply bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-xl;
+  }
+  
+  .church-gradient {
+    @apply bg-gradient-to-r from-primary-900 to-primary-700;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-900 hover:bg-primary-800 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-xl transition-all duration-200;
+  }
+  
+  .input-primary {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all duration-200 outline-none;
+  }
+}
+
+/* Custom scrollbar for lyrics viewer */
+.lyrics-viewer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lyrics-viewer::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+.lyrics-viewer::-webkit-scrollbar-thumb {
+  @apply bg-primary-400 rounded-full;
+}
+
+/* Image viewer styles */
+.image-viewer {
+  @apply relative overflow-hidden rounded-2xl;
+}
+
+.image-viewer img {
+  @apply w-full h-auto object-contain transition-transform duration-300;
+}
+
+.image-viewer:hover img {
+  transform: scale(1.02);
+}
+
+/* Audio player styles */
+.audio-player {
+  @apply fixed bottom-0 left-0 right-0 glass-card border-t border-white/30 z-50;
+}
+
+/* Swiper custom styles */
+.swiper-button-next,
+.swiper-button-prev {
+  @apply bg-primary-900/70 text-white w-10 h-10 rounded-full;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-primary-900;
+}
+
+/* Sidebar transitions */
+.sidebar-transition {
+  transition: width 0.3s ease-in-out;
+}
+
+/* Custom scrollbar for sidebar */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: #4a1d1d;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: #7f1d1d;
+  border-radius: 2px;
+}
+
+/* Smooth transitions for sidebar */
+.sidebar-enter {
+  transform: translateX(-100%);
+}
+
+.sidebar-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+.sidebar-exit {
+  transform: translateX(0);
+}
+
+.sidebar-exit-active {
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
+}
+
+/* Overlay animation */
+.overlay-enter {
+  opacity: 0;
+}
+
+.overlay-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+
+.overlay-exit {
+  opacity: 1;
+}
+
+.overlay-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
