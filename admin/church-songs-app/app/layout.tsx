@@ -4,7 +4,7 @@ import './globals.css'
 import { Providers } from '@/components/Providers'
 import { Toaster } from 'react-hot-toast'
 import SystemBars from '@/components/SystemBars'
-import NetworkStatus from '@/components/NetworkStatus'
+import OfflineWrapper from '@/components/OfflineWrapper'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NetworkStatus />
+        <OfflineWrapper>
         <Providers>
           {children}
           <Toaster 
@@ -35,8 +35,10 @@ export default function RootLayout({
               },
             }}
           />
+              </Providers>
+        </OfflineWrapper>
         <SystemBars />
-        </Providers>
+    
       </body>
     </html>
   )
