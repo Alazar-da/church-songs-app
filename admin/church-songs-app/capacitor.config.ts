@@ -6,7 +6,7 @@ const config: CapacitorConfig = {
   webDir: 'public',
 
   server: {
-    url: 'https://church-songs-app-git-admin-mobile-alazar-das-projects.vercel.app/login/',
+    url: 'https://church-songs-app.vercel.app/login/',
     cleartext: true
   }
 };
